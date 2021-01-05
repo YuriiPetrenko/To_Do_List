@@ -1,24 +1,27 @@
 body {
+  display: flex;
   font-family: "Lato", sans-serif;
   padding: 0;
   margin: 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #e7e7e7;
 }
 
 .container {
   width: 380px;
-  margin: 50% auto;
+  max-width: 100%;
+  margin: 0 auto;
   padding: 0;
-  /* position: relative; */
 }
 
 .header {
-  /* display: block; */
   height: 180px;
-  width: 360px;
-  padding: 10px;
+  width: 380px;
+  padding: 10;
 
   background-image: url(../img/Flat-Mountains.svg);
-  background-repeat: no-repeat;
   background-position: bottom;
   border-radius: 25px 25px 0 0;
   position: relative;
@@ -37,6 +40,13 @@ body {
 .clear i {
   font-size: 30px;
   color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+}
+
+.clear i:hover {
+  transform: rotate(45deg);
+  text-shadow: 1px 1px 2px #797979;
 }
 
 #date {
@@ -45,6 +55,7 @@ body {
   position: absolute;
   color: #fff;
   font-size: 25px;
+  font-weight: bold;
   font-family: inherit;
 }
 
@@ -79,7 +90,21 @@ body {
 .fa-circle {
   width: 10%;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.fa-check-circle {
+  color: rgb(0, 180, 0);
+  width: 10%;
+  text-align: center;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.lineThrought {
+  text-decoration: line-through;
+  color: #ccc;
 }
 
 .content__text {
@@ -94,6 +119,11 @@ body {
   width: 10%;
   text-align: center;
   font-size: 20px;
+  transition: font-size 0.1s linear;
+}
+
+.fa-trash-alt:hover {
+  font-size: 23px;
 }
 
 /* footer */
@@ -102,12 +132,19 @@ body {
   padding: 10px;
   color: blue;
   border-top: 1px solid #e5e5e5;
+  background-color: #fff;
 }
 
 .fa-plus-circle {
   width: 20%;
   font-size: 30px;
   text-align: center;
+  transition: color 0.2s linear;
+  cursor: pointer;
+}
+
+.fa-plus-circle:hover {
+  color: #6200ff;
 }
 
 .input {
