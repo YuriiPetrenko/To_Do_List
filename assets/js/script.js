@@ -4,6 +4,7 @@ const clear = document.querySelector(".clear");
 const date = document.getElementById("date");
 const list = document.getElementById("list");
 const input = document.getElementById("input");
+const btn = document.getElementById("btn");
 
 //Classes names
 const CHECK = "fa-check-circle";
@@ -128,3 +129,24 @@ list.addEventListener("click", function(event){
          // add item to localstorage
          localStorage.setItem("ToDo", JSON.stringify(LIST));
      });
+
+
+btn.addEventListener("click",function(event){
+         const toDo = input.value;
+         if(toDo){
+                  addToDo(toDo, id , false, false);
+
+                  LIST.push({
+                           name : toDo,
+                           id : id,
+                           done : false,
+                           trash : false
+                  });
+
+                  //add item to local storage
+                  localStorage.setItem("ToDo", JSON.stringify(LIST));
+                  id++;
+         }
+         input.value = "";
+         
+});
