@@ -77,22 +77,7 @@ function addToDo(toDo, id, done, trash){
 
 document.addEventListener("keyup",function(event){
          if(event.keyCode == 13){
-                  const toDo = input.value;
-                  if(toDo){
-                           addToDo(toDo, id , false, false);
-
-                           LIST.push({
-                                    name : toDo,
-                                    id : id,
-                                    done : false,
-                                    trash : false
-                           });
-
-                           //add item to local storage
-                           localStorage.setItem("ToDo", JSON.stringify(LIST));
-                           id++;
-                  }
-                  input.value = "";
+                  addTask();
          }
 });
 
@@ -132,6 +117,10 @@ list.addEventListener("click", function(event){
 
 
 btn.addEventListener("click",function(event){
+         addTask();
+});
+
+function addTask(){
          const toDo = input.value;
          if(toDo){
                   addToDo(toDo, id , false, false);
@@ -148,5 +137,4 @@ btn.addEventListener("click",function(event){
                   id++;
          }
          input.value = "";
-         
-});
+}
